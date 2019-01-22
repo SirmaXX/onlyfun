@@ -1,0 +1,91 @@
+<html>
+<head>
+  <title>talking</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<style>
+body{background-color:black !important;}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+.conversation{
+	position: relative;
+	margin: 1%;
+	padding: 10px 10px;
+	border: 1px solid #ececec;
+	border-radius: 1px;
+	max-height: 80vh;
+	min-height: 50vh;
+    overflow: scroll;
+background-color:white;
+}
+
+
+#bot{
+border: 1px solid #007AFF;
+ 	background: #007AFF;
+ 	padding:2%;
+ 	width: 40%;
+ 	color:white;
+ 	border-radius:  20px;
+float:left;
+
+}
+#user{
+border: 1px solid #007AFF;
+ 	background:green;
+ 	padding:2%;
+ 	width: 40%;
+ 	color:white;
+ 	border-radius:  20px;
+float:right;
+
+}
+</style>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<body>
+<div class="container ">
+
+<div class="row vertical-center">
+<h1 class="text-center text-white">Kuantum yaşam koçu,nefes koçu,cinci hoca,fütürüst,Kuantum yapay zeka yaşam koçu,falcı </h1>
+<div class="col-md-12">
+<div class="conversation">
+    </div>
+<form>
+<input id="txt" class="form-control" type="textbox" placeholder="lütfen birşeyler yaz"></input>
+    <input type="button"  class="btn btn-primary" id="sendButton" value="mesaj gönder"/>
+</form>
+
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script>
+
+
+var koc=[
+"yapay zeka öğrenin","milli teknoloji üreticez","asla pes etme başarırsın","kendimizi telkin edelim","nefes al nefes ver","gelecekte yapay zeka etkili olacak","gençler teknolojiyi üretmeli ama hayatlarını onlar hakkında konuşup ve yanlış kararlar alıp mahvetmeliyiz","koç burcu olduğun için çok para kazanıcan","kahve falı bakılır","jüpiter neptüne baktığı için işlerin yaver gidecek","aslan burcuysan başarı seni bekliyor","beyaz atlı prens seni bekliyor" ];
+
+
+
+
+
+  $(document).ready(function () {
+        $("#sendButton").click(function () {
+var value = $("#txt").val(); 
+var yanit=koc[Math.floor(Math.random() * koc.length)];
+$(".conversation").append("<P id='user'><span style='color:white;float:left'> " +value+"<br>");
+$(".conversation").append("<br>");
+            $(".conversation").append("<P id='bot'><span style='color:white;float:left'> " +yanit+"<br>");
+        });
+    });
+</script>
+
+</body>
+</html>
